@@ -23,6 +23,10 @@ on boot
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
+    #TODO: remove these two once we switch kernel to rfkill interface
+    chown bluetooth bluetooth /sys/module/board_buzz/parameters/bluetooth_power_on
+    chmod 0660 /sys/module/board_buzz/parameters/bluetooth_power_on
+
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -30,50 +34,68 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/serial_lock_cpu
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/serial_lock_cpu
 
+    chown system system /sys/module/serial/parameters/modem_enabled
+    chown system system /dev/ttyHSUSB0
+    chown system system /dev/smd9
+
+    # Enable low memory killer to check file pages
+    write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,5120,5632,6144
+    write /sys/module/lowmemorykiller/parameters/check_filepages 1
+    
+    # Boot animation
+	mkdir /data/local/bootanimation 0777 shell shell
+
 on property:init.svc.wpa_supplicant=stopped
     start dhcp-release
 
 on property:init.svc.dhcp-release=stopped
     stop dhcpcd
 
-# compass/accelerometer daemon
-service akm8973 /system/bin/akm8973
-    user compass
-    group compass misc input
-
-service wlan_loader /system/bin/wlan_loader \
-    -f /system/etc/wifi/Fw1251r1c.bin -e /proc/calibration \
-    -i /system/etc/wifi/tiwlan.ini
-    disabled
-    oneshot
-
 service wpa_supplicant /system/bin/wpa_supplicant \
-    -Dtiwlan0 -itiwlan0 -c/data/misc/wifi/wpa_supplicant.conf
-    user wifi
-    group wifi inet
-    socket wpa_tiwlan0 dgram 660 wifi wifi
+    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+#   user wifi
+#   group wifi inet
+    socket wpa_eth0 dgram 660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd /system/bin/dhcpcd -BKL -d tiwlan0
+service dhcpcd /system/bin/dhcpcd -BKL -d eth0
     disabled
     oneshot
 
-service dhcp-release /system/bin/dhcpcd -k tiwlan0
+service dhcp-release /system/bin/dhcpcd -k eth0
     disabled
     oneshot
 
-service hciattach /system/bin/hciattach \
-    -n -s 115200 /dev/ttyHS0 texasalt 4000000 flow
-    user bluetooth
+#TODO: Remove hciattach_legacy
+#service hciattach /system/bin/hciattach \
+#    -n -s 115200 /dev/ttyHS0 texas 4000000 flow
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
+
+#service hciattach_legacy /system/bin/hciattach \
+#    -n -s 115200 /dev/ttyMSM0 texas 115200 flow
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
+
+# Make sure we startup btld before hcid
+# Set target address to emulator host loopback IF
+# Limit baudrate to 460800 to ensure reliable uart operation
+#service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
+service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
+    user root
     group bluetooth net_bt_admin
     disabled
+    oneshot
 
-# bugreport is triggered by the KEY_BACK and KEY_MENU keycodes
-service bugreport /system/bin/bugreport -d -v -z -o /sdcard/bugreports/bugreport
+
+# bugreport is triggered by the KEY_VOLUMEUP and BTN_ACTION keycodes
+service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     disabled
     oneshot
-    keycodes 158 139
+    keycodes 115 272
 
 # for USB internet sharing
 service udhcpd /system/bin/udhcpd
@@ -88,7 +110,18 @@ service netsharing_off /system/bin/netsharing net off
 	disabled
 	oneshot
 
-service zchgd /system/bin/zchgd
-	user root
-	group root graphics
-	oneshot
+service modem /system/xbin/wireless_modem
+    user system
+    group system
+    disabled
+
+on property:service.modem.enable=1
+    start modem
+
+on property:service.modem.enable=0
+    stop modem
+
+# compass/accelerometer daemon
+service akmd /system/bin/akmd
+    user compass
+    group compass misc input

@@ -21,8 +21,7 @@ TARGET_NO_RECOVERY := true
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libWifiApi
-BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/sta_dk_4_0_4_32
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329"
 WIFI_DRIVER_MODULE_ARG      := ""
 WIFI_DRIVER_MODULE_NAME     := "wlan"
 WIFI_FIRMWARE_LOADER        := "wlan_loader"
@@ -44,7 +43,7 @@ BOARD_KERNEL_BASE := 0x02E00000
 
 BOARD_HAVE_BLUETOOTH := true
 
-BOARD_VENDOR_USE_AKMD := akm8973
+BOARD_VENDOR_USE_AKMD := akmd
 
 BOARD_VENDOR_QCOM_AMSS_VERSION := 1355
 
