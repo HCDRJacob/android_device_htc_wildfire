@@ -19,10 +19,6 @@ PRODUCT_COPY_FILES += \
     device/htc/wildfire/custom/sysctl.conf:system/etc/sysctl.conf \
     device/htc/wildfire/custom/placeholder:system/lib/modules/placeholder
 
-# wildfire Calibration app
-PRODUCT_COPY_FILES += \
-    device/htc/wildfire/custom/wildfireCalibration.apk:system/app/wildfireCalibration.apk
-
 # proprietary for /system/sbin
 PRODUCT_COPY_FILES += \
 	device/htc/wildfire/custom/dropbear:system/xbin/dropbear \
@@ -34,29 +30,26 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
 	device/htc/wildfire/proprietary/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin
 
-# boot partition
-PRODUCT_COPY_FILES += \
-	device/htc/wildfire/custom/wildfire-hack.ko:root/sbin/wildfire-hack.ko \
-
 # Other bin stuff
 PRODUCT_COPY_FILES += \
-	device/htc/wildfire/proprietary/akm8973:system/bin/akm8973
+	device/htc/wildfire/proprietary/akmd:system/bin/akmd
 
 # proprietary stuff
 PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \
 	device/htc/wildfire/proprietary/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/htc/wildfire/proprietary/AudioPreProcess.csv:system/etc/AudioPreProcess.csv \
-	device/htc/wildfire/proprietary/Fw1251r1c.bin:system/etc/wifi/Fw1251r1c.bin \
-	device/htc/wildfire/proprietary/tiwlan.ini:system/etc/wifi/tiwlan.ini \
-	device/htc/wildfire/proprietary/libA2DP.so:system/lib/libA2DP.so \
+	device/htc/wildfire/proprietary/BCM4329B1_002.002.023.0360.0362.hcd:system/etc/firmware/BCM4329B1_002.002.023.0360.0362.hcd \
+	device/htc/wildfire/proprietary/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
 	device/htc/wildfire/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
 	device/htc/wildfire/proprietary/libGLES_qcom.so:system/lib/egl/libGLES_qcom.so \
 	device/htc/wildfire/proprietary/libgps.so:system/lib/libgps.so \
 	device/htc/wildfire/proprietary/liboemcamera.so:system/lib/liboemcamera.so \
+	device/htc/wildfire/proprietary/libcamera.so:system/lib/libcamera.so \
 	device/htc/wildfire/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
 	device/htc/wildfire/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
 	device/htc/wildfire/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
+	device/htc/wildfire/proprietary/libOmxCore.so:system/lib/libOmxCoress.so \
 	device/htc/wildfire/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     	device/htc/wildfire/proprietary/libhtc_acoustic.so:system/lib/libhtc_acoustic.so \
     	device/htc/wildfire/proprietary/libhtc_ril.so:system/lib/libhtc_ril.so \
@@ -64,10 +57,17 @@ PRODUCT_COPY_FILES += \
     	device/htc/wildfire/proprietary/buzz-keypad.kl:system/usr/keylayout/buzz-keypad.kl \
     	device/htc/wildfire/proprietary/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     	device/htc/wildfire/proprietary/qwerty.kl:system/usr/keylayout/qwerty.kl \
-	device/htc/wildfire/proprietary/agps_rm:/system/etc/agps_rm \
+	device/htc/wildfire/proprietary/agps_rm:/system/etc/agps_rm
 	device/htc/wildfire/proprietary/libt9.so:system/lib/libt9.so \
 	device/htc/wildfire/proprietary/voicemail-conf.xml:system/etc/voicemail-conf.xml \
 	device/htc/wildfire/proprietary/spn-conf.xml:system/etc/spn-conf.xml \
 	device/htc/wildfire/proprietary/sensors.buzz.so:system/lib/hw/sensors.buzz.so
-
+	device/htc/wildfire/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+	device/htc/wildfire/proprietary/libpvasfcommon.so:system/lib/libpvasfcommon.so
+	device/htc/wildfire/proprietary/libpvasflocalpb.so:system/lib/libpvasflocalpb.so
+	device/htc/wildfire/proprietary/libpvasflocalpbreg.so:system/lib/libpvasflocalpbreg.so
+	device/htc/wildfire/proprietary/pvasflocal.cfg:system/etc/pvasflocal.cfg
+	/device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+	
+	
 
