@@ -3,27 +3,20 @@ PRODUCT_COPY_FILES += \
     device/htc/wildfire/custom/logo.rle:root/logo.rle \
     device/htc/wildfire/proprietary/libgps.so:obj/lib/libgps.so
 
-# proprietary for /system/squashfs
+# proprietary for /system/lib/modules
 PRODUCT_COPY_FILES += \
-	device/htc/wildfire/custom/modules.sqf:system/squashfs/modules.sqf
+	device/htc/wildfire/custom/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 # Files in /system/etc
 PRODUCT_COPY_FILES += \
     device/htc/wildfire/custom/passwd:system/etc/passwd \
     device/htc/wildfire/custom/init.d/00sysctl:system/etc/init.d/00sysctl \
-    device/htc/wildfire/custom/init.d/02squashfs:system/etc/init.d/02squashsf \
     device/htc/wildfire/custom/init.d/08compcache:system/etc/init.d/08compcache \
     device/htc/wildfire/custom/init.d/20opt_and_fix:system/etc/init.d/20opt_and_fix \
     device/htc/wildfire/custom/init.d/80userinit:system/etc/init.d/80userinit \
     device/htc/wildfire/custom/init.d/99complete:system/etc/init.d/99complete \
     device/htc/wildfire/custom/sysctl.conf:system/etc/sysctl.conf \
     device/htc/wildfire/custom/placeholder:system/lib/modules/placeholder
-
-# proprietary for /system/sbin
-PRODUCT_COPY_FILES += \
-	device/htc/wildfire/custom/dropbear:system/xbin/dropbear \
-	device/htc/wildfire/custom/dropbearkey:system/xbin/dropbearkey \
-	device/htc/wildfire/custom/rzscontrol:system/xbin/rzscontrol
 
 # proprietary for /system/usr/keychars and /system/usr/keylayout
 PRODUCT_COPY_FILES += \
