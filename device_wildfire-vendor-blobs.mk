@@ -1,3 +1,4 @@
+
 # libgps is necessary to complete the compilation
 PRODUCT_COPY_FILES += \
     device/htc/wildfire/custom/logo.rle:root/logo.rle \
@@ -50,17 +51,17 @@ PRODUCT_COPY_FILES += \
     	device/htc/wildfire/proprietary/buzz-keypad.kl:system/usr/keylayout/buzz-keypad.kl \
     	device/htc/wildfire/proprietary/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     	device/htc/wildfire/proprietary/qwerty.kl:system/usr/keylayout/qwerty.kl \
-	device/htc/wildfire/proprietary/agps_rm:/system/etc/agps_rm
+	device/htc/wildfire/proprietary/agps_rm:system/etc/agps_rm \
 	device/htc/wildfire/proprietary/libt9.so:system/lib/libt9.so \
 	device/htc/wildfire/proprietary/voicemail-conf.xml:system/etc/voicemail-conf.xml \
 	device/htc/wildfire/proprietary/spn-conf.xml:system/etc/spn-conf.xml \
-	device/htc/wildfire/proprietary/sensors.buzz.so:system/lib/hw/sensors.buzz.so
-	device/htc/wildfire/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so
-	device/htc/wildfire/proprietary/libpvasfcommon.so:system/lib/libpvasfcommon.so
-	device/htc/wildfire/proprietary/libpvasflocalpb.so:system/lib/libpvasflocalpb.so
-	device/htc/wildfire/proprietary/libpvasflocalpbreg.so:system/lib/libpvasflocalpbreg.so
-	device/htc/wildfire/proprietary/pvasflocal.cfg:system/etc/pvasflocal.cfg
-	/device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+	device/htc/wildfire/proprietary/sensors.buzz.so:system/lib/hw/sensors.buzz.so \
+	device/htc/wildfire/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+	device/htc/wildfire/proprietary/libpvasfcommon.so:system/lib/libpvasfcommon.so \
+	device/htc/wildfire/proprietary/libpvasflocalpb.so:system/lib/libpvasflocalpb.so \
+	device/htc/wildfire/proprietary/libpvasflocalpbreg.so:system/lib/libpvasflocalpbreg.so \
+	device/htc/wildfire/proprietary/pvasflocal.cfg:system/etc/pvasflocal.cfg \
+	/device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	
 	
 
