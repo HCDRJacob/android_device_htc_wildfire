@@ -47,7 +47,6 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     	device/htc/wildfire/proprietary/libhtc_acoustic.so:system/lib/libhtc_acoustic.so \
     	device/htc/wildfire/proprietary/libhtc_ril.so:system/lib/libhtc_ril.so \
-    	device/htc/wildfire/proprietary/brf6300.bin:system/etc/firmware/brf6300.bin \
     	device/htc/wildfire/proprietary/buzz-keypad.kl:system/usr/keylayout/buzz-keypad.kl \
     	device/htc/wildfire/proprietary/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     	device/htc/wildfire/proprietary/qwerty.kl:system/usr/keylayout/qwerty.kl \
@@ -61,7 +60,7 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/libpvasflocalpb.so:system/lib/libpvasflocalpb.so \
 	device/htc/wildfire/proprietary/libpvasflocalpbreg.so:system/lib/libpvasflocalpbreg.so \
 	device/htc/wildfire/proprietary/pvasflocal.cfg:system/etc/pvasflocal.cfg \
-	/device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	
 	
 
