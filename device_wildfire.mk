@@ -70,7 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # This only affects the case in which there are remembered access points,
 # but none are in range.
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface = tiwlan0 \
+    wifi.interface = eth0 \
     wifi.supplicant_scan_interval=45
 
 # density in DPI of the LCD of this board. This is used to scale the UI

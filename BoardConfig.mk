@@ -49,16 +49,12 @@ BOARD_VENDOR_USE_AKMD := akmd
  
 BOARD_VENDOR_QCOM_AMSS_VERSION := 1355
  
-TARGET_HARDWARE_3D := false
+TARGET_HARDWARE_3D := true
  
 BOARD_GPS_LIBRARIES := libgps librpc
  
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/htc/wildfire/egl.cfg
- 
- 
-# Use libcamera2
-BOARD_USES_OLD_CAMERA_HACK := true
  
 # No authoring clock for OpenCore on DS
 BOARD_NO_PV_AUTHORING_CLOCK := true
