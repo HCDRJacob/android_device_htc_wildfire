@@ -18,5 +18,5 @@ BOARD_GPS_LIBRARIES := libgps
 
 USE_CAMERA_STUB := false
 
-PRODUCT_SPECIFIC_DEFINES := TARGET_PRELINKER_MAP=$(TOP)/device/htc/wildfire/wildfire-prelink.map
+PRODUCT_SPECIFIC_DEFINES := TARGET_PRELINKER_MAP=$(TOP)/device/htc/wildfire/prelink-linux-arm-buzz.map
 
