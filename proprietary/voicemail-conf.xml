@@ -277,9 +277,15 @@
         vmtag="Voicemail" />
 
     <voicemail 
-        numeric="72423"
-        carrier="VIVO"
-        vmnumber="*555"
+        numeric="45002" 
+        carrier="KT" 
+        vmnumber="*88" 
+        vmtag="Voicemail" />        
+        
+    <voicemail 
+        numeric="45008" 
+        carrier="KT" 
+        vmnumber="*88" 
         vmtag="Voicemail" />
-
+        
 </voicemail>

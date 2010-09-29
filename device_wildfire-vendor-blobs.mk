@@ -2,7 +2,8 @@
 # libgps is necessary to complete the compilation
 PRODUCT_COPY_FILES += \
     device/htc/wildfire/custom/logo.rle:root/logo.rle \
-    device/htc/wildfire/proprietary/libgps.so:obj/lib/libgps.so
+    device/htc/wildfire/proprietary/libgps.so:obj/lib/libgps.so \
+    device/htc/wildfire/proprietary/libcamera.so:obj/lib/libcamera.so
 
 # proprietary for /system/lib/modules
 PRODUCT_COPY_FILES += \
@@ -33,7 +34,7 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \
 	device/htc/wildfire/proprietary/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/htc/wildfire/proprietary/AudioPreProcess.csv:system/etc/AudioPreProcess.csv \
-	device/htc/wildfire/proprietary/BCM4329B1_002.002.023.0360.0362.hcd:system/etc/firmware/BCM4329B1_002.002.023.0360.0362.hcd \
+	device/htc/wildfire/proprietary/BCM4329B1_002.002.023.0436.0439.hcd:system/etc/firmware/BCM4329B1_002.002.023.0436.0439.hcd \
 	device/htc/wildfire/proprietary/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
 	device/htc/wildfire/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
 	device/htc/wildfire/proprietary/libGLES_qcom.so:system/lib/egl/libGLES_qcom.so \

@@ -60,8 +60,6 @@ BOARD_EGL_CFG := device/htc/wildfire/egl.cfg
 BOARD_NO_PV_AUTHORING_CLOCK := true
  
 BOARD_USES_QCOM_LIBS := true
-
-BOARD_USES_ECLAIR_LIBCAMERA := true
  
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
  
