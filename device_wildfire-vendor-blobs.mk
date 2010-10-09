@@ -62,6 +62,8 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/libpvasflocalpbreg.so:system/lib/libpvasflocalpbreg.so \
 	device/htc/wildfire/proprietary/pvasflocal.cfg:system/etc/pvasflocal.cfg \
 	device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	
-	
-
+ 	device/htc/wildfire/proprietary/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+	device/htc/wildfire/proprietary/libbluedroid.so:system/lib/libbluedroid.so \
+	device/htc/wildfire/proprietary/libbluetooth.so:system/lib/libbluetooth.so \
+	device/htc/wildfire/proprietary/libbluetoothd.so:system/lib/libbluetoothd.so \
+	device/htc/wildfire/proprietary/btld:system/bin/btld
