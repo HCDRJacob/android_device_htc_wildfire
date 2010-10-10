@@ -37,6 +37,8 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/BCM4329B1_002.002.023.0436.0439.hcd:system/etc/firmware/BCM4329B1_002.002.023.0436.0439.hcd \
 	device/htc/wildfire/proprietary/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
 	device/htc/wildfire/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
+	device/htc/wildfire/proprietary/libGLESv1_CM.so:system/lib/libGLESv1_CM.so \
+	device/htc/wildfire/proprietary/libGLESv2.so:system/lib/libGLESv2.so \
 	device/htc/wildfire/proprietary/libGLES_qcom.so:system/lib/egl/libGLES_qcom.so \
 	device/htc/wildfire/proprietary/libgps.so:system/lib/libgps.so \
 	device/htc/wildfire/proprietary/liboemcamera.so:system/lib/liboemcamera.so \

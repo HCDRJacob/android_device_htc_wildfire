@@ -9,13 +9,6 @@
 USE_CAMERA_STUB := true
  
 # inherit from the proprietary version
-
-PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/cyanogen/prelink-linux-arm-buzz.map
-
-BOARD_GPS_LIBRARIES := libgps
-
-USE_CAMERA_STUB := false
-
 -include device/htc/wildfire/BoardConfigVendor.mk
  
 TARGET_BOARD_PLATFORM := msm7k
