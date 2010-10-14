@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \
 	device/htc/wildfire/proprietary/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/htc/wildfire/proprietary/AudioPreProcess.csv:system/etc/AudioPreProcess.csv \
-	device/htc/wildfire/proprietary/BCM4329B1_002.002.023.0436.0439.hcd:system/etc/firmware/BCM4329B1_002.002.023.0436.0439.hcd \
+	device/htc/wildfire/proprietary/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
 	device/htc/wildfire/proprietary/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
 	device/htc/wildfire/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
 	device/htc/wildfire/proprietary/libGLESv1_CM.so:system/lib/libGLESv1_CM.so \
@@ -65,7 +65,3 @@ PRODUCT_COPY_FILES += \
 	device/htc/wildfire/proprietary/pvasflocal.cfg:system/etc/pvasflocal.cfg \
 	device/htc/wildfire/proprietary/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
  	device/htc/wildfire/proprietary/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-	device/htc/wildfire/proprietary/libbluedroid.so:system/lib/libbluedroid.so \
-	device/htc/wildfire/proprietary/libbluetooth.so:system/lib/libbluetooth.so \
-	device/htc/wildfire/proprietary/libbluetoothd.so:system/lib/libbluetoothd.so \
-	device/htc/wildfire/proprietary/btld:system/bin/btld
